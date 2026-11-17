@@ -1,0 +1,42 @@
+# ---- Build output ----
+target/
+build/
+dist/
+*.class
+
+# ---- Node / frontend (React frontend excluded from backend repo) ----
+frontend/
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# ---- Legacy / duplicate directories ----
+safe-trip-planner/
+
+# ---- IDE / editor ----
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+
+# ---- OS files ----
+.DS_Store
+Thumbs.db
+
+# ---- Environment / secrets ----
+# Never commit real credentials or private keys. Keep local copies only.
+.env
+.env.*
+*.env
+application.properties
+**/application.properties
+
+# Allow safe configuration templates and test configuration
+!src/main/resources/application.properties.example
+!src/test/resources/application.properties
+
+safe-trip-planner.pdf
+

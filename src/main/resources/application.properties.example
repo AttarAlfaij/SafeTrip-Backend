@@ -1,0 +1,34 @@
+# ==============================================================================
+# Safe Trip Planner - Spring Boot Backend Configuration Template
+# Copy this file to src/main/resources/application.properties or supply via environment variables.
+# NEVER commit real production credentials, passwords, or secrets to version control.
+# ==============================================================================
+
+# Server Configuration
+server.port=${PORT:8080}
+
+# Database Configuration (MySQL / Railway / Cloud Provider)
+spring.datasource.url=${SPRING_DATASOURCE_URL:jdbc:mysql://localhost:3306/safetrip_db}
+spring.datasource.username=${SPRING_DATASOURCE_USERNAME:root}
+spring.datasource.password=${SPRING_DATASOURCE_PASSWORD:your_database_password}
+
+# Hibernate / JPA
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+
+# GitHub OAuth2 Client Credentials
+spring.security.oauth2.client.registration.github.client-id=${GITHUB_CLIENT_ID:your_github_client_id}
+spring.security.oauth2.client.registration.github.client-secret=${GITHUB_CLIENT_SECRET:your_github_client_secret}
+spring.security.oauth2.client.registration.github.scope=read:user,user:email
+
+# Google OAuth2 Client Credentials
+spring.security.oauth2.client.registration.google.client-id=${GOOGLE_CLIENT_ID:your_google_client_id}
+spring.security.oauth2.client.registration.google.client-secret=${GOOGLE_CLIENT_SECRET:your_google_client_secret}
+spring.security.oauth2.client.registration.google.scope=openid,profile,email
+
+# Frontend Redirect / CORS Origin
+frontend.url=${FRONTEND_URL:http://localhost:5173}
+
+# JWT Signing Secret & Expiration (optional; falls back to secure in-memory key if unset)
+jwt.secret=${JWT_SECRET:}
+jwt.expiration-ms=${JWT_EXPIRATION_MS:86400000}
